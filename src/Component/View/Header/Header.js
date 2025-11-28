@@ -82,101 +82,103 @@ const Header = (props) => {
   return(
     <>
       <div className="header-container">
-        <div className="logo"><a href="/"><IoLogoApple /></a></div>
-        {/* <label className="responsive" htmlFor='close'>&#9776;</label>
-        <input className='input' hidden type='checkbox' id='close'/> */}
-        <div className="responsive">
+        <div className='header-background'>
+          <div className="logo"><a href="/"><IoLogoApple /></a></div>
+          {/* <label className="responsive" htmlFor='close'>&#9776;</label>
+          <input className='input' hidden type='checkbox' id='close'/> */}
+          <div className="responsive">
           <label htmlFor='close'><FaGripLines /></label>
           <input className='input' hidden type='checkbox' id='close'/>
           {/* <button onClick={() => Responsive()}>&#9776;</button>
           <button type="button" className="btn-close" aria-label="Close"></button> */}
           <label htmlFor='close' className='background'></label>
-            <div className="list">
-              <label htmlFor='close' className="close" aria-label="Close"><IoMdClose /></label>
-              <div className="box">
-                <h3>Store</h3>
-                <div className=""></div>
-              </div>
-              <div className="box">
-                <h3>Mac</h3>
-                <div></div>
-              </div>
-              <div className="box">
-                <h3>iPad</h3>
-                <div></div>
-              </div>
-              <div className="box">
-                <h3>iPhone</h3>
-                <div></div>
-              </div>
-              <div className="box">
-                <h3>Watch</h3>
-              </div>
-              <div className="box">
-                <h3>Vision</h3>
-              </div>
-              <div className="box">
-                <h3>AirPods</h3>
-              </div>
-              <div className="box">
-                <h3>TV &#38; Home</h3>
-              </div>
-              <div className="box">
-                <h3>Entertainment</h3>
-              </div>
-              <div className="box">
-                <h3>Accessories</h3>
-              </div>
-              <div className="box">
-                <h3>Support</h3>
-              </div>
+          <div className="list">
+            <label htmlFor='close' className="close" aria-label="Close"><IoMdClose /></label>
+            <div className="box">
+              <h3>Store</h3>
+              <div className=""></div>
             </div>
-        </div>
-        <label htmlFor='close' className='background'></label>
-            <div className="list">
-              <div className="box">
-                <h3>Store</h3>
-                <div className=""></div>
-              </div>
-              <div className="box">
-                <h3>Mac</h3>
-                <div></div>
-              </div>
-              <div className="box">
-                <h3>iPad</h3>
-                <div></div>
-              </div>
-              <div className="box">
-                <h3>iPhone</h3>
-                <div></div>
-              </div>
-              <div className="box">
-                <h3>Watch</h3>
-              </div>
-              <div className="box">
-                <h3>Vision</h3>
-              </div>
-              <div className="box">
-                <h3>AirPods</h3>
-              </div>
-              <div className="box">
-                <h3>TV &#38; Home</h3>
-              </div>
-              <div className="box">
-                <h3>Entertainment</h3>
-              </div>
-              <div className="box">
-                <h3>Accessories</h3>
-              </div>
-              <div className="box">
-                <h3>Support</h3>
-              </div>
+            <div className="box">
+              <h3>Mac</h3>
+              <div></div>
             </div>
-        <div className="user">
-          <GrSearch />
-          <BsBag />
-          {/* <button type="button" className="btn btn-outline-dark">Log In</button>
-          <button type="button" className="btn btn-dark">Sign Up</button> */}
+            <div className="box">
+              <h3>iPad</h3>
+              <div></div>
+            </div>
+            <div className="box">
+              <h3>iPhone</h3>
+              <div></div>
+            </div>
+            <div className="box">
+              <h3>Watch</h3>
+            </div>
+            <div className="box">
+              <h3>Vision</h3>
+            </div>
+            <div className="box">
+              <h3>AirPods</h3>
+            </div>
+            <div className="box">
+              <h3>TV &#38; Home</h3>
+            </div>
+            <div className="box">
+              <h3>Entertainment</h3>
+            </div>
+            <div className="box">
+              <h3>Accessories</h3>
+            </div>
+            <div className="box">
+              <h3>Support</h3>
+            </div>
+          </div>
+          </div>
+          <label htmlFor='close' className='background'></label>
+          <div className="list">
+          <div className="box">
+            <h3>Store</h3>
+            <div className=""></div>
+          </div>
+          <div className="box">
+            <h3>Mac</h3>
+            <div></div>
+          </div>
+          <div className="box">
+            <h3>iPad</h3>
+            <div></div>
+          </div>
+          <div className="box">
+            <h3>iPhone</h3>
+            <div></div>
+          </div>
+          <div className="box">
+            <h3>Watch</h3>
+          </div>
+          <div className="box">
+            <h3>Vision</h3>
+          </div>
+          <div className="box">
+            <h3>AirPods</h3>
+          </div>
+          <div className="box">
+            <h3>TV &#38; Home</h3>
+          </div>
+          <div className="box">
+            <h3>Entertainment</h3>
+          </div>
+          <div className="box">
+            <h3>Accessories</h3>
+          </div>
+          <div className="box">
+            <h3>Support</h3>
+          </div>
+          </div>
+          <div className="user">
+            <span><GrSearch /></span>
+            <span><BsBag /></span>
+            {/* <button type="button" className="btn btn-outline-dark">Log In</button>
+            <button type="button" className="btn btn-dark">Sign Up</button> */}
+          </div>
         </div>
       </div>
     </>

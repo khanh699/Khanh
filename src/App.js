@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.scss';
 import Banner from './Component/View/Article/Banner';
+import Main from './Component/View/Article/Main';
 import Footer from './Component/View/Footer/Footer';
 import Header from './Component/View/Header/Header';
 
@@ -10,7 +11,7 @@ const App = () => {
       <div className="header"><Header/></div>
       <div className="banner"><Banner/></div>
       {/* <div className="left">left</div> */}
-      <div className="main">main</div>
+      <div className="main"><Main/></div>
       {/* <div className="right">right</div>
       <div className="low">low</div> */}
       <div className="footer"><Footer/></div>

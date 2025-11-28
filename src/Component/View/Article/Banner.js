@@ -68,7 +68,7 @@ const Banner = () => {
       {/* <video id="ase-2025-video" data-inline-media="" muted="" preload="none" src={video} playsinline=""></video> */}
       <div className="banner-headline">
 	    	<h1 className="section-headline">The Apple Store Shopping Event <small>Get an Apple Gift Card with an eligible purchase.<sup>1</sup> Starts 11.28.</small></h1>
-        <button type="button" className="btn btn-primary">Learn more</button>
+        <button type="button" className="btn btn-primary">Shop</button>
 	    </div>
       {/* <div className="banner-headline">
 	    	<h1 className="section-headline">The page you’re looking<br/> for can’t be found.</h1>

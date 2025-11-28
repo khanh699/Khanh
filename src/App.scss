@@ -27,11 +27,10 @@
     "footer      footer      footer";
   grid-gap: 0 16px;
   padding-top: 40px;
-  background: #000;
+  background: #fff;
 
   .header {
     grid-area: header;
-    padding: 8px 16px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
     position: fixed;
     top: 0;
@@ -39,79 +38,90 @@
     left: 0;
     z-index: 1995;
     // background: #dbdbdb;
-    background: rgba(22, 22, 23, 0.95);
-    color: #fff;
-    
-    .header-container {
-      display: grid;
-      grid-template-columns: auto 4fr auto;
-      grid-gap: 16px;
-      justify-content: center;
-      // align-items: center;
-      max-width: 996px;
-      margin: 0 auto;
+    background: rgba(0, 0, 0, 0.88);
 
-      .logo {
-        // color: #fff;
-        // font-size: 16px;
-        svg{
-          position: relative;
-          top: -2px;
-        }
-        
-      }
-      .background {
-        display: none;
-        background: rgba(0, 0, 0, 0.3);
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        animation: bg linear 0.4s;
-      }
-      .input:checked ~ .background {
-        display: block;
-      }
-      .input:checked ~ .list {
-        transform: translateX(0);
-      }
-      .list {
+    .header-container{
+      background: rgba(22, 22, 23, 0.88);
+      color: rgba(255, 255, 255, .8);
+      padding: 8px 16px;
+
+      .header-background {
         display: grid;
-        // grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
-        grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
-        grid-gap: 12px;
+        grid-template-columns: auto 4fr auto;
+        grid-gap: 16px;
+        justify-content: center;
         // align-items: center;
-
-        .box {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          h3 {
-            font-size: 12px;
-            font-weight: 400;
-            text-align: center;
-            margin: 0;
-            cursor: pointer;
-            width: 100%;
-            height: 100%;
+        max-width: 996px;
+        margin: 0 auto;
+        :is(.user span, h3, a) {
+            &:hover {
+              color: #fff;
+            }
+        }
+  
+        .logo {
+          // color: #fff;
+          // font-size: 16px;
+          
+          svg{
+            position: relative;
+            top: -2px;
+          }
+          
+        }
+        .background {
+          display: none;
+          background: rgba(0, 0, 0, 0.3);
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          animation: bg linear 0.4s;
+        }
+        .input:checked ~ .background {
+          display: block;
+        }
+        .input:checked ~ .list {
+          transform: translateX(0);
+        }
+        .list {
+          display: grid;
+          // grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+          grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto;
+          grid-gap: 12px;
+          // align-items: center;
+  
+          .box {
             display: flex;
             justify-content: center;
             align-items: center;
+  
+            h3 {
+              font-size: 12px;
+              font-weight: 400;
+              text-align: center;
+              margin: 0;
+              cursor: pointer;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
           }
         }
-      }
-
-      .user {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 32px;
-      }
-
-      .responsive {
-        display: none;
+  
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 32px;
+        }
+  
+        .responsive {
+          display: none;
+        }
       }
     }
   }
@@ -156,7 +166,7 @@
 
       .section-headline {
         text-align: center;
-        font-size: 48px;
+        font-size: 46px;
         line-height: 1.2;
         font-weight: 600;
         letter-spacing: -.003em;
@@ -165,7 +175,7 @@
         color: #fff;
         small{
           display: block;
-          font-size: 25px;
+          font-size: 24px;
           line-height: 1.4;
           font-weight: 400;
           sup{
@@ -215,7 +225,122 @@
     
   .main {
     grid-area: main;
-    background: #3E82EF;
+    background: #fff;
+    margin:  12px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 0;
+
+    .iphone17{
+      width: 100%;
+      position: relative;
+      min-height: 80vh;
+
+      .main-headline {
+        h2{
+          color: #fff;
+        }
+      }
+    }
+
+    .iphone-air{
+      width: 100%;
+      position: relative;
+      min-height: 80vh;
+    }
+
+    .promo-holiday{
+      justify-content: flex-end !important;
+    }
+
+    .image-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+  
+      img {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        height: 100%;
+        transform: translateX(-50%);
+        z-index: 5;
+      }
+    }
+    .box{
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: calc(50% - 6px);
+      min-height: 80vh;
+      .button {
+        a{
+          padding: 4px 16px !important;
+        }
+      }
+      
+    }
+    .main-headline {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      z-index: 95;
+      padding: 32px 16px;
+    }
+
+    h2 {
+      font-size: 46px;
+      line-height: 1.2;
+      text-align: center;
+      color: #1d1d1f;
+      small {
+        font-size: 28px;
+        font-weight: 400;
+        display: block;
+      }
+    }
+    h3 {
+      font-size: 40px;
+      line-height: 1.2;
+      text-align: center;
+      color: #1d1d1f;
+      small {
+        font-size: 20px;
+        font-weight: 400;
+        display: block;
+        sup {
+          font-size: 12px;
+          position: relative;
+          top: -8px;
+        }
+      }
+    }
+
+    .button {
+      display: flex;
+      gap: 16px;
+    }
+
+    a{
+      color: #fff !important;
+      &:hover{
+        text-decoration: none !important;
+      }
+    }
+    a:last-of-type:not(.btn-primary){
+      color: #2997ff !important;
+      &:hover{
+        color: #fff !important;
+      }
+    }
   }
     
   .right {
@@ -351,14 +476,53 @@
       color: rgb(0, 102, 204);
     }
   }
+
+  .btn {
+    border-radius: 22px;
+    padding: 8px 16px;
+  }
 }
 
 @media (max-width: 1439.98px) {
   .App-container {
     grid-template-columns: auto;
+
+    .main {
+      :is(.iphone17, .iphone-air, .box){
+        min-height: 460px;
+      }
+      .image-wrapper {
+        img {
+          // width: 100%;
+        }
+      }
+
+      h3 {
+        font-size: 30px;
+      }
+    }
   }
 }
 
+@media (max-width: 1023.98px) {
+  .App-container {
+    grid-template-columns: auto;
+
+    .main{
+      .image-wrapper{
+        img{
+          // width: 100%;
+        }
+      }
+      h3{
+        font-size: 30px;
+      }
+      .br {
+        display: none;
+      }
+    }
+  }
+}
 
 @media (max-width: 991px) {
   .App-container {
@@ -381,6 +545,144 @@
     }
 
     .banner {
+      // padding: 16px;
+      // .banner-headline {
+      //   max-width: 980px;
+      //   display: flex;
+      //   flex-direction: column;
+      //   align-items: center;
+      //   justify-content: center;
+      //   z-index: 95;
+      //   position: relative;
+      
+      //   .section-headline {
+      //     font-size: 5.8vw;
+      //     line-height: 1.5;
+      //     small{
+      //       font-size: 3.2vw;
+      //       sup{
+      //         top: -4px;
+      //         font-size: 2.4vw;
+      //       }
+      //     }
+      //   }
+      // }
+    }
+    .main{
+      
+    }
+  }
+}
+  
+@media (max-width: 767.98px) {
+  .App-container {
+    grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr auto ;
+      // min-height: 100vh;
+      grid-template-areas:
+        "header"
+        "banner"
+        // "left"
+        "main"
+        // "right"
+        // "low"
+        "footer";
+    
+    .header {
+      .header-container {
+    
+        .header-background {
+          grid-template-columns: 16px 1fr;
+          padding-right: 48px;
+          position: relative;
+    
+          .list {
+            display: none;
+            .box {
+              h3 {
+                font-size: 16px;
+                font-weight: 700;
+              }
+            }
+          }
+    
+          .user {
+            gap: 16px;
+          }
+
+          // .respon{
+          //   display: none;
+          // }
+
+          .responsive {
+            display: block;
+            position: absolute;
+            top: -2px;
+            right: 0;
+    
+            >label:first-of-type {
+              // font-size: 24px;
+              border: 1px solid #fff;
+              background: rgba(22, 22, 23, 0);
+              padding: 0 8px 2px;
+              border-radius: 8px;
+            }
+            .list {
+              position: absolute;
+              top: -6px;
+              right: -16px;
+              width: 320px;
+              min-height: 100vh;
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: column;
+              gap: 16px;
+              background: rgba(0, 0, 0, 0.95);
+              padding: 20px 16px 16px 48px;
+              transform: translateX(100%);
+              transition: transform linear 0.4s;
+              .close {
+                color: #fff;
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                font-size: 24px;
+                svg {
+                  position: relative;
+                  top: -10px;
+                }
+              }
+              .box{
+                display: block;
+                h3{
+                  text-align: left;
+                  justify-content: flex-start;
+                }
+              }
+            }
+            @keyframes bg {
+              from {
+                opacity: 0;
+              }
+              to{
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .banner {
+      min-height: 500px;
+      padding: 16px 16px 32px;
+      .image-wrapper{
+        background: #121933 url(../src/Assets/banner.jpg) center top no-repeat;
+        background-size: 734px;
+        video{
+          display: none;
+        }
+      }
       .banner-headline {
         max-width: 980px;
         display: flex;
@@ -389,118 +691,56 @@
         justify-content: center;
         z-index: 95;
         position: relative;
-      
+
         .section-headline {
-          font-size: 5.8vw;
-          line-height: 1.5;
-          small{
-            font-size: 3.2vw;
-            sup{
+          font-size: 32px;
+          // line-height: 1.5;
+          max-width: 288px;
+
+          small {
+            font-size: 20px;
+
+            sup {
               top: -4px;
-              font-size: 2.4vw;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-  
-@media (max-width: 767.98px) {
-  .App-container {
-    grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto 1fr auto auto auto;
-      // min-height: 100vh;
-      grid-template-areas:
-        "header"
-        "banner"
-        "left"
-        "main"
-        "right"
-        "low"
-        "footer";
-    .header {
-
-      .header-container {
-        grid-template-columns: 16px 1fr;
-        padding-right: 48px;
-        position: relative;
-  
-        .list {
-          display: none;
-          .box {
-            h3 {
               font-size: 16px;
-              font-weight: 700;
-            }
-          }
-        }
-  
-        .user {
-          gap: 16px;
-        }
-
-        // .respon{
-        //   display: none;
-        // }
-
-        .responsive {
-          display: block;
-          position: absolute;
-          top: -2px;
-          right: 0;
-
-          >label:first-of-type {
-            // font-size: 24px;
-            border: 1px solid #fff;
-            background: rgba(22, 22, 23, 0);
-            padding: 0 8px 2px;
-            border-radius: 8px;
-          }
-          .list {
-            position: absolute;
-            top: -6px;
-            right: -16px;
-            width: 320px;
-            min-height: 100vh;
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            gap: 16px;
-            background: rgba(0, 0, 0, 0.95);
-            padding: 20px 16px 16px 48px;
-            transform: translateX(100%);
-            transition: transform linear 0.4s;
-            .close {
-              color: #fff;
-              position: absolute;
-              top: 16px;
-              left: 16px;
-              font-size: 24px;
-              svg {
-                position: relative;
-                top: -10px;
-              }
-            }
-            .box{
-              display: block;
-              h3{
-                text-align: left;
-                justify-content: flex-start;
-              }
-            }
-          }
-          @keyframes bg {
-            from {
-              opacity: 0;
-            }
-            to{
-              opacity: 1;
             }
           }
         }
       }
     }
+
+    .main{
+      .iphone17 {
+        .image-wrapper {
+          background: #121933 url(../src/Assets/iphone-17-pro-mobile.jpg) center top no-repeat;
+          background-size: 768px;
+    
+          img {
+            display: none;
+          }
+        }
+      }
+    
+      .iphone-air {
+        .image-wrapper {
+          background: #121933 url(../src/Assets/iphone-air-mobile.jpg) center top no-repeat;
+          background-size: 768px;
+    
+          img {
+            display: none;
+          }
+        }
+      }
+
+      .main-headline{
+        padding: 16px;
+      }
+
+      .box{
+        width: 100%;
+      }
+    }
+
     .footer {
 
       .ac-gf-directory {
@@ -514,11 +754,13 @@
           padding-right: 0;
 
           .section{
-            margin: 0 0 16px !important;
+            margin: 0 0 8px !important;
             border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+            // padding: 0 0 10px;
           }
           .section-title{
             position: relative;
+            
             span {
               display: block;
               position: absolute;
@@ -528,6 +770,15 @@
           }
           .section-list{
             display: none;
+            margin: 0 0 8px;
+            .section-item {
+              margin: 0;
+          
+              a {
+                padding: 6px 16px;
+                display: block;
+              }
+            }
           }
           .input:checked ~ .section-list {
             display: block;
@@ -536,6 +787,8 @@
           .input:checked ~ .section-title span {
             transform: rotate(180deg);
           }
+       
+          
         }
       }
     }
@@ -544,11 +797,16 @@
 
 @media (max-width: 424px) {
   .App-container{
+    .main{
+      h2 small{
+        font-size: 24px;
+      }
+    }
     .footer{
       .ac-gf-footer{
         .locale{
           float: none;
-          margin: 0 0 0;
+          margin: 0 0 16px;
         }
       }
     }

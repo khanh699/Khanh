@@ -61,11 +61,12 @@
 // export default Header;
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Logo from '../../../Assets/apple-logo.png';
 // import { NavLink } from "react-router-dom";
-import { useState } from 'react';
+// import { useState } from 'react';
 import { GrSearch } from "react-icons/gr";
 import { BsBag } from "react-icons/bs";
+import { FaGripLines } from "react-icons/fa6";
+import { IoLogoApple, IoMdClose } from "react-icons/io";
 
 const Header = (props) => {
   // const [isShowNav, setIsShowNav] = useState(true);
@@ -81,17 +82,17 @@ const Header = (props) => {
   return(
     <>
       <div className="header-container">
-        <div className="logo"><img src={Logo} alt="Apple" /></div>
+        <div className="logo"><a href="/"><IoLogoApple /></a></div>
         {/* <label className="responsive" htmlFor='close'>&#9776;</label>
         <input className='input' hidden type='checkbox' id='close'/> */}
         <div className="responsive">
-          <label htmlFor='close'>&#9776;</label>
+          <label htmlFor='close'><FaGripLines /></label>
           <input className='input' hidden type='checkbox' id='close'/>
           {/* <button onClick={() => Responsive()}>&#9776;</button>
           <button type="button" className="btn-close" aria-label="Close"></button> */}
           <label htmlFor='close' className='background'></label>
             <div className="list">
-              <label htmlFor='close' className="btn-close" aria-label="Close"></label>
+              <label htmlFor='close' className="close" aria-label="Close"><IoMdClose /></label>
               <div className="box">
                 <h3>Store</h3>
                 <div className=""></div>

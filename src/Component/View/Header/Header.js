@@ -67,6 +67,7 @@ import { GrSearch } from "react-icons/gr";
 import { BsBag } from "react-icons/bs";
 import { FaGripLines } from "react-icons/fa6";
 import { IoLogoApple, IoMdClose } from "react-icons/io";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = (props) => {
   // const [isShowNav, setIsShowNav] = useState(true);
@@ -79,11 +80,21 @@ const Header = (props) => {
   //   // alert("my");
   //   setIsShowNav(!isShowNav);
   // }
+
+  // const navigate = useNavigate();
+
+  // const HandleLogin = () => {
+  //   navigate('/login');
+  // }
+  // const HandleRegister = () => {
+  //   navigate('/register');
+  // }
+
   return(
     <>
       <div className="header-container">
         <div className='header-background'>
-          <div className="logo"><a href="/"><IoLogoApple /></a></div>
+          <div className="logo"><NavLink to="/" className="navbar-brand"><IoLogoApple /></NavLink></div>
           {/* <label className="responsive" htmlFor='close'>&#9776;</label>
           <input className='input' hidden type='checkbox' id='close'/> */}
           <div className="responsive">
@@ -95,7 +106,7 @@ const Header = (props) => {
           <div className="list">
             <label htmlFor='close' className="close" aria-label="Close"><IoMdClose /></label>
             <div className="box">
-              <h3>Store</h3>
+              <h3><NavLink to="/store" className="navbar-brand">Store</NavLink></h3>
               <div className=""></div>
             </div>
             <div className="box">
@@ -135,43 +146,43 @@ const Header = (props) => {
           </div>
           <label htmlFor='close' className='background'></label>
           <div className="list">
-          <div className="box">
-            <h3>Store</h3>
-            <div className=""></div>
-          </div>
-          <div className="box">
-            <h3>Mac</h3>
-            <div></div>
-          </div>
-          <div className="box">
-            <h3>iPad</h3>
-            <div></div>
-          </div>
-          <div className="box">
-            <h3>iPhone</h3>
-            <div></div>
-          </div>
-          <div className="box">
-            <h3>Watch</h3>
-          </div>
-          <div className="box">
-            <h3>Vision</h3>
-          </div>
-          <div className="box">
-            <h3>AirPods</h3>
-          </div>
-          <div className="box">
-            <h3>TV &#38; Home</h3>
-          </div>
-          <div className="box">
-            <h3>Entertainment</h3>
-          </div>
-          <div className="box">
-            <h3>Accessories</h3>
-          </div>
-          <div className="box">
-            <h3>Support</h3>
-          </div>
+            <div className="box">
+              <h3><NavLink to="/store" className="navbar-brand">Store</NavLink></h3>
+              <div className=""></div>
+            </div>
+            <div className="box">
+              <h3>Mac</h3>
+              <div></div>
+            </div>
+            <div className="box">
+              <h3>iPad</h3>
+              <div></div>
+            </div>
+            <div className="box">
+              <h3>iPhone</h3>
+              <div></div>
+            </div>
+            <div className="box">
+              <h3>Watch</h3>
+            </div>
+            <div className="box">
+              <h3>Vision</h3>
+            </div>
+            <div className="box">
+              <h3>AirPods</h3>
+            </div>
+            <div className="box">
+              <h3>TV &#38; Home</h3>
+            </div>
+            <div className="box">
+              <h3>Entertainment</h3>
+            </div>
+            <div className="box">
+              <h3>Accessories</h3>
+            </div>
+            <div className="box">
+              <h3>Support</h3>
+            </div>
           </div>
           <div className="user">
             <span><GrSearch /></span>

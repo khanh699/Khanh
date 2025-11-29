@@ -9,7 +9,7 @@ import { IoLogoApple, IoMdClose } from "react-icons/io";
 
 const Header = (props) => {
   const [isShowNav, setIsShowNav] = useState(false);
-  const [isSearch, setIsSearch] = useState(false);
+  // const [isSearch, setIsSearch] = useState(false);
   
   const HandleNav = () => {
     setIsShowNav(!isShowNav);

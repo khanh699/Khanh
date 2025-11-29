@@ -6,6 +6,7 @@ import {
 import App from "./App";
 import Article from "./Component/View/Article/Article";
 import Store from "./Component/View/Article/Store";
+import Mac from "./Component/View/Article/Mac";
 
 const Layout = () => {
   return(
@@ -13,7 +14,8 @@ const Layout = () => {
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Article/>} />
-          <Route  path="store" element={<Store/>}/>
+          <Route path="store" element={<Store/>}/>
+          <Route path="mac" element={<Mac/>}/>
         </Route>
       </Routes>
     </>

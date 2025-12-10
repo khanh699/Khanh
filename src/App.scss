@@ -176,6 +176,132 @@
           align-items: center;
           justify-content: flex-end;
           gap: 32px;
+
+          .seach,
+          .bag{
+            position: absolute;
+            top: 40px;
+            right: 0;
+            // transform: translateY(calc(-100% - 40px));
+            // transition: transform linear 0.4s;
+            width: 100%;
+            background: rgb(22, 22, 23);
+
+            .searchfield, 
+            .bagfield{
+              max-width: 1024px;
+              margin: 0 auto;
+              padding: 32px 22px 80px;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+
+              // &:before{
+              //   content: "";
+              //   position: absolute;
+              //   right: 50px;
+              //   bottom: 100%;
+              //   width: 40px;
+              //   height: 40px;
+              // }
+
+              .search-title,
+              .bag-title{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin: 0 0 32px;
+
+                span{
+                  position: relative;
+                  top: -3px;
+                  font-size: 24px;
+                }
+
+                .searchfield-input{
+                  outline: none;
+                  border: none;
+                  background: no-repeat;
+                  color: #fff;
+                  flex: 1 1 0;
+                  font-size: 24px;
+                  font-weight: 600;
+                }
+              }
+
+              .secondary-item:first-of-type{
+                .secondary-list:first-of-type{
+                  font-size: 22px;
+                  line-height: 1;
+                  // padding-right: 88px;
+                  margin-bottom: 20px;
+
+                  li{
+                    .secondary-link {
+                      padding: 8px 12px;
+                    }
+                  }
+                }
+              }
+
+              .secondary-list {
+                margin: 6px 0 0 -8px;
+                // padding-right: 44px;
+                font-size: 14px;
+                line-height: 1;
+                font-weight: 600;
+
+                li{
+                  .secondary-link {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 2px 8px;
+                    color: #E8E8ED;
+                    &:hover{
+                      background: #757575;
+                      border-radius: 4px;
+                    }
+                    span{
+                      position: relative;
+                      top: -3px;
+                      font-size: 24px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .bag{
+            .bag-title{
+              flex-direction: column;
+              align-items: flex-start !important;
+              gap: 24px !important;
+              .fonts{
+                font-size: 12px;
+              }
+            }
+            
+            
+            .secondary-list{
+              font-size: 12px !important;
+              .secondary-link{
+                padding: 4px 8px !important;
+                span{
+                  font-size: 12px !important;
+                  top: -1px !important;
+                }
+                
+              }
+            }
+          }
+
+          h2{
+            margin: 0;
+            font-size: 12px;
+            color: rgb(134, 134, 139);
+          }
         }
   
         .responsive {
@@ -796,14 +922,14 @@
         .header-background {
           grid-template-columns: 16px 1fr;
           padding-right: 48px;
-          position: relative;
+          // position: relative;
     
           .list {
             display: none;
 
             .box {
               h3 {
-                font-size: 16px;
+                font-size: 18px;
                 font-weight: 700;
               }
             }
@@ -816,14 +942,15 @@
           .responsive {
             display: block;
             position: absolute;
-            top: -2px;
-            right: 0;
+            top: 6px;
+            right: 16px;
+            z-index: 1999;
     
             .label {
               border: 1px solid #fff;
               background: rgba(22, 22, 23, 0);
               padding: 0 8px 2px;
-              border-radius: 8px;
+              border-radius: 6px;
             }
 
             .list {
@@ -837,7 +964,7 @@
               flex-direction: column;
               gap: 16px;
               background: rgba(0, 0, 0, 0.95);
-              padding: 20px 16px 16px 48px;
+              padding: 20px 48px 16px 32px;
               transform: translateX(100%);
               transition: transform linear 0.4s;
 
@@ -845,7 +972,7 @@
                 color: #fff;
                 position: absolute;
                 top: 16px;
-                left: 16px;
+                right: 16px;
                 font-size: 24px;
                 svg {
                   position: relative;

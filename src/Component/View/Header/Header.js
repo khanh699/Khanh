@@ -4,19 +4,41 @@ import { useState } from 'react';
 import { GrSearch } from "react-icons/gr";
 import { BsBag } from "react-icons/bs";
 import { FaGripLines } from "react-icons/fa6";
-import { IoLogoApple, IoMdClose } from "react-icons/io";
+import { IoLogoApple, IoMdClose, IoIosSearch, IoIosArrowRoundForward, IoIosBookmark, IoIosPlayCircle } from "react-icons/io";
+import { FaUserCircle } from "react-icons/fa";
+import { RiBox3Line } from "react-icons/ri";
 // import { NavLink, useNavigate } from "react-router-dom";
 
 const Header = (props) => {
   const [isShowNav, setIsShowNav] = useState(false);
-  // const [isSearch, setIsSearch] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
+  const [isBag, setIsBag] = useState(false);
+  // const navigate = useNavigate();
   
   const HandleNav = () => {
     setIsShowNav(!isShowNav);
+    if (isSearch) {
+      setIsSearch(!isSearch);
+    }
+    
+    if (isBag) {
+      setIsBag(!isBag);
+    }
+    
   }
 
   const Search = () => {
-    alert("my")
+    setIsSearch(!isSearch);
+    if (isBag) {
+      setIsBag(!isBag);
+    }
+  }
+
+  const Bag = () => {
+    setIsBag(!isBag);
+    if (isSearch) {
+      setIsSearch(!isSearch);
+    }
   }
 
   return(
@@ -25,46 +47,46 @@ const Header = (props) => {
         <div className='header-background'>
           <div className="logo"><NavLink to="/" className="navbar-brand"><IoLogoApple /></NavLink></div>
           <div className="responsive">
-            <div className="label" onClick={() => {HandleNav()}}><FaGripLines /></div>
-            <span onClick={() => {HandleNav()}} className='background' style={isShowNav ? {display : "block"} : {display : "none"}}></span>
+            <div className="label" onClick={() => HandleNav()}><FaGripLines /></div>
+            <span onClick={() => HandleNav()} className='background' style={isShowNav ? {display : "block"} : {display : "none"}}></span>
             <div className="list" style={isShowNav ? {transform : "translateX(0)"} : {transform : "translateX(100%)"}}>
-              <span className="close" onClick={() => {HandleNav()}}><IoMdClose /></span>
+              <span className="close" onClick={() => HandleNav()}><IoMdClose /></span>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/store" className="navbar-brand">Store</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/store" className="navbar-brand">Store</NavLink></h3>
                 <div className=""></div>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/mac" className="navbar-brand">Mac</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/mac" className="navbar-brand">Mac</NavLink></h3>
                 <div></div>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">iPad</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">iPad</NavLink></h3>
                 <div></div>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">iPhone</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">iPhone</NavLink></h3>
                 <div></div>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">Watch</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">Watch</NavLink></h3>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">Vision</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">Vision</NavLink></h3>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">AirPods</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">AirPods</NavLink></h3>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">TV &#38; Home</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">TV &#38; Home</NavLink></h3>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">Entertainment</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">Entertainment</NavLink></h3>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">Accessories</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">Accessories</NavLink></h3>
               </div>
               <div className="box">
-                <h3 onClick={() => {HandleNav()}}><NavLink to="/" className="navbar-brand">Support</NavLink></h3>
+                <h3 onClick={() => HandleNav()}><NavLink to="/" className="navbar-brand">Support</NavLink></h3>
               </div>
             </div>
           </div>
@@ -530,8 +552,44 @@ const Header = (props) => {
             </div>
           </div>
           <div className="user">
-            <span onClick={() => {Search()}}><GrSearch /></span>
-            <span><BsBag /></span>
+            <span style={{cursor : "pointer"}} onClick={() => Search()}><GrSearch /></span>
+            <div className="seach" style={isSearch ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsSearch(false)}>
+              <div className="searchfield">
+                <div className="search-title">
+                  <span><IoIosSearch/></span> 
+                  <input placeholder="Search apple.com" aria-label="Search apple.com" className="searchfield-input"/>
+                </div>
+                <div className="secondary-item">
+                  <h2 className="secondary-title m-0">Quick Links</h2>
+                  <ul className="secondary-list">
+                    <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/store"><span><IoIosArrowRoundForward /></span> Shop Gifts</a></li>
+                    <li><a className="secondary-link" href="https://www.apple.com/retail/"><span><IoIosArrowRoundForward /></span> Find a Store</a></li>
+                    <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/giftcards"><span><IoIosArrowRoundForward /></span> Apple Gift Card</a></li>
+                    <li><a className="secondary-link" href="https://www.apple.com/apple-vision-pro/"><span><IoIosArrowRoundForward /></span> Apple Vision Pro</a></li>
+                    <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/trade_in"><span><IoIosArrowRoundForward /></span> Apple Trade In</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <span style={{cursor : "pointer"}} onClick={() => Bag()}><BsBag /></span>
+            <div className="bag" style={isBag ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsBag(false)}>
+              <div className="bagfield">
+                <div className="bag-title">
+                  <p className="fs-4 m-0">Your Bag is empty</p>
+                  <p className="fonts m-0"><a href="/"><ins>Sign in</ins></a> to see if you have any saved items</p>
+                  {/* <input placeholder="Search apple.com" aria-label="Search apple.com" className="searchfield-input"/> */}
+                </div>
+                <div className="secondary-item">
+                  <h2 className="secondary-title m-0">My Profile</h2>
+                  <ul className="secondary-list">
+                    <li><a className="secondary-link" href="/"><span><RiBox3Line /></span> Orders</a></li>
+                    <li><a className="secondary-link" href="/"><span><IoIosBookmark /></span> Your Saves</a></li>
+                    <li><a className="secondary-link" href="/"><span><IoIosPlayCircle /></span> Account</a></li>
+                    <li><a className="secondary-link" href="/"><span><FaUserCircle /></span> Sign in</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
             {/* <button type="button" className="btn btn-outline-dark">Log In</button>
             <button type="button" className="btn btn-dark">Sign Up</button> */}
           </div>

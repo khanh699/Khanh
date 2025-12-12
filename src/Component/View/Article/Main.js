@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Apple from '../../../Assets/apple-logo.png';
 import iPhone17PC from '../../../Assets/iphone-17-pro.jpg';
 import iPhoneAir from '../../../Assets/iphone-air.jpg';
 import Promo from '../../../Assets/promo-holiday.jpg';
@@ -77,7 +78,7 @@ const Main = () => {
             <img src={AppleWatch} alt="Apple"/>
           </div>
           <div className="main-headline">
-            <h3 className="mb-3">Apple Watch Series 11 <small>The ultimate way to watch your health.</small></h3>
+            <h3 className="mb-3"><img src={Apple} alt="Apple" /> Watch Series 11 <small>The ultimate way to watch your health.</small></h3>
             <div className="button">
 			    		<a className="btn btn-primary" href="/" target="_self">Learn more</a>
 			    	  <a className="btn btn-outline-primary" href="/" target="_self">Buy</a>
@@ -100,7 +101,7 @@ const Main = () => {
             <img src={AppleTradeIn} alt="Apple"/>
           </div>
           <div className="main-headline">
-            <h3 className="mb-3">Apple Trade In <small>Get up to $180–$670<br/> in credit when you trade in<br/> iPhone 13 or higher.<sup>3</sup></small></h3>
+            <h3 className="mb-3"><img src={Apple} alt="Apple" /> Trade In <small>Get up to $180–$670<br/> in credit when you trade in<br/> iPhone 13 or higher.<sup>3</sup></small></h3>
             <div className="button">
 			    		<a className="btn btn-primary" href="/" target="_self">Get your estimate</a>
 			    	</div>

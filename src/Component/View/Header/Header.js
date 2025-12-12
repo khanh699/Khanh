@@ -546,44 +546,44 @@ const Header = (props) => {
           </div>
           <div className="user">
             <span style={{cursor : "pointer"}} onClick={() => Search()} onMouseEnter={() => setIsBag(false)}><GrSearch /></span>
-            <div className="seach" style={isSearch ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsSearch(false)}>
-              <div className="searchfield">
-                <div className="search-title">
-                  <span><IoIosSearch/></span> 
-                  <input placeholder="Search apple.com" aria-label="Search apple.com" className="searchfield-input"/>
-                </div>
-                <div className="secondary-item">
-                  <h2 className="secondary-title m-0">Quick Links</h2>
-                  <ul className="secondary-list">
-                    <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/store"><span><IoIosArrowRoundForward /></span> Shop Gifts</a></li>
-                    <li><a className="secondary-link" href="https://www.apple.com/retail/"><span><IoIosArrowRoundForward /></span> Find a Store</a></li>
-                    <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/giftcards"><span><IoIosArrowRoundForward /></span> Apple Gift Card</a></li>
-                    <li><a className="secondary-link" href="https://www.apple.com/apple-vision-pro/"><span><IoIosArrowRoundForward /></span> Apple Vision Pro</a></li>
-                    <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/trade_in"><span><IoIosArrowRoundForward /></span> Apple Trade In</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
             <span style={{cursor : "pointer"}} onClick={() => Bag()} onMouseEnter={() => setIsSearch(false)}><BsBag /></span>
-            <div className="bag" style={isBag ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsBag(false)}>
-              <div className="bagfield">
-                <div className="bag-title">
-                  <p className="fs-4 m-0">Your Bag is empty</p>
-                  <p className="fonts m-0"><a href="/"><ins>Sign in</ins></a> to see if you have any saved items</p>
-                </div>
-                <div className="secondary-item">
-                  <h2 className="secondary-title m-0">My Profile</h2>
-                  <ul className="secondary-list">
-                    <li><a className="secondary-link" href="/"><span><RiBox3Line /></span> Orders</a></li>
-                    <li><a className="secondary-link" href="/"><span><IoIosBookmark /></span> Your Saves</a></li>
-                    <li><a className="secondary-link" href="/"><span><IoIosPlayCircle /></span> Account</a></li>
-                    <li><a className="secondary-link" href="/"><span><FaUserCircle /></span> Sign in</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
             {/* <button type="button" className="btn btn-outline-dark">Log In</button>
             <button type="button" className="btn btn-dark">Sign Up</button> */}
+          </div>
+        </div>
+      </div>
+      <div className="seach" style={isSearch ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsSearch(false)}>
+        <div className="searchfield">
+          <div className="search-title">
+            <span><IoIosSearch/></span> 
+            <input placeholder="Search apple.com" aria-label="Search apple.com" className="searchfield-input"/>
+          </div>
+          <div className="secondary-item">
+            <h2 className="secondary-title m-0">Quick Links</h2>
+            <ul className="secondary-list">
+              <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/store"><span><IoIosArrowRoundForward /></span> Shop Gifts</a></li>
+              <li><a className="secondary-link" href="https://www.apple.com/retail/"><span><IoIosArrowRoundForward /></span> Find a Store</a></li>
+              <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/giftcards"><span><IoIosArrowRoundForward /></span> Apple Gift Card</a></li>
+              <li><a className="secondary-link" href="https://www.apple.com/apple-vision-pro/"><span><IoIosArrowRoundForward /></span> Apple Vision Pro</a></li>
+              <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/trade_in"><span><IoIosArrowRoundForward /></span> Apple Trade In</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="bag" style={isBag ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsBag(false)}>
+        <div className="bagfield">
+          <div className="bag-title">
+            <p className="fs-4 m-0">Your Bag is empty</p>
+            <p className="fonts m-0"><a href="/"><ins>Sign in</ins></a> to see if you have any saved items</p>
+          </div>
+          <div className="secondary-item">
+            <h2 className="secondary-title m-0">My Profile</h2>
+            <ul className="secondary-list">
+              <li><a className="secondary-link" href="/"><span><RiBox3Line /></span> Orders</a></li>
+              <li><a className="secondary-link" href="/"><span><IoIosBookmark /></span> Your Saves</a></li>
+              <li><a className="secondary-link" href="/"><span><IoIosPlayCircle /></span> Account</a></li>
+              <li><a className="secondary-link" href="/"><span><FaUserCircle /></span> Sign in</a></li>
+            </ul>
           </div>
         </div>
       </div>

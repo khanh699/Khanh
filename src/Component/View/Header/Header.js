@@ -24,21 +24,14 @@ const Header = (props) => {
     if (isBag) {
       setIsBag(!isBag);
     }
-    
   }
 
   const Search = () => {
     setIsSearch(!isSearch);
-    if (isBag) {
-      setIsBag(!isBag);
-    }
   }
 
   const Bag = () => {
     setIsBag(!isBag);
-    if (isSearch) {
-      setIsSearch(!isSearch);
-    }
   }
 
   return(
@@ -90,7 +83,7 @@ const Header = (props) => {
               </div>
             </div>
           </div>
-          <div className="list">
+          <div className="list" onMouseEnter={() => setIsSearch(false)}>
             <div className="box">
               <h3><NavLink to="/store" className="navbar-brand">Store</NavLink></h3>
               <div className="header-store">
@@ -552,7 +545,7 @@ const Header = (props) => {
             </div>
           </div>
           <div className="user">
-            <span style={{cursor : "pointer"}} onClick={() => Search()}><GrSearch /></span>
+            <span style={{cursor : "pointer"}} onClick={() => Search()} onMouseEnter={() => setIsBag(false)}><GrSearch /></span>
             <div className="seach" style={isSearch ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsSearch(false)}>
               <div className="searchfield">
                 <div className="search-title">
@@ -571,13 +564,12 @@ const Header = (props) => {
                 </div>
               </div>
             </div>
-            <span style={{cursor : "pointer"}} onClick={() => Bag()}><BsBag /></span>
+            <span style={{cursor : "pointer"}} onClick={() => Bag()} onMouseEnter={() => setIsSearch(false)}><BsBag /></span>
             <div className="bag" style={isBag ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsBag(false)}>
               <div className="bagfield">
                 <div className="bag-title">
                   <p className="fs-4 m-0">Your Bag is empty</p>
                   <p className="fonts m-0"><a href="/"><ins>Sign in</ins></a> to see if you have any saved items</p>
-                  {/* <input placeholder="Search apple.com" aria-label="Search apple.com" className="searchfield-input"/> */}
                 </div>
                 <div className="secondary-item">
                   <h2 className="secondary-title m-0">My Profile</h2>

@@ -1,0 +1,211 @@
+#basic-nav-dropdown1 {
+  margin-left: 32px;
+}
+.back {
+  cursor: pointer;
+}
+
+.login {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 22px;
+  min-height: 595px;
+
+  h1 {
+    font-size: 40px;
+    line-height: 1.2;
+  }
+
+  .with-signin {
+    max-width: 640px;
+    margin: 72px auto 0;
+    // box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.75);
+    color: #595959;
+
+    h2 {
+      text-align: center;
+      font-size: 24px;
+      line-height: 1.2;
+      // color: #595959;
+    }
+
+    .form {
+      max-width: 480px;
+      margin: 40px auto;
+      position: relative;
+      .signin-form {
+        min-height: 157px;
+        max-height: none;
+        transition: max-height 0.2s linear;
+        position: relative;
+        .form-textbox {
+          position: relative;
+          .form-textbox-input {
+            font-size: 17px;
+            line-height: 1.2;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+            width: 100%;
+            height: 54px;
+            border-radius: 12px;
+            padding: 16px 48px 0 16px;
+            text-align: left;
+            appearance: none;
+            border: 1px solid;
+          }
+          .form-textbox-label {
+            position: absolute;
+            pointer-events: none;
+            transition-timing-function: ease-in;
+            transition-duration: 0.125s;
+            top: 1.0588235294rem;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: calc(100% - 32px);
+            left: 1rem;
+            font-size: 17px;
+            line-height: 1.2353641176;
+            font-weight: 400;
+            letter-spacing: -0.022em;
+            font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+          }
+          .form-textbox-input:focus {
+            border: 2px solid #0071e3 !important;
+          }
+
+          .form-textbox-input:focus ~ .form-textbox-label {
+            font-size: 12px;
+            line-height: 1.2;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+            top: 10px;
+            left: 18px;
+            // transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+          }
+          // .form-textbox-input:not(:placeholder-shown) ~ .form-textbox-label {
+          //   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+          // }
+        }
+        .account-name {
+          position: relative;
+          &:focus-within .button {
+            bottom: 6px;
+          }
+        }
+        .password {
+          position: relative;
+          &:focus-within .button {
+            bottom: 6px;
+          }
+          .form-control {
+            border-radius: 0 0 12px 12px !important;
+            border-top: 0 !important;
+          }
+        }
+        .button {
+          position: absolute;
+          bottom: 12px;
+          right: 10px;
+          border-radius: 50%;
+          border: 1px solid #595959;
+          background: #fff;
+          width: 28px;
+          height: 28px;
+          color: #595959;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-left: 3px;
+        }
+
+        .form-floating {
+          .form-control {
+            border-radius: 12px;
+            border: 1px solid #86868b;
+            &:focus {
+              border: 2px solid #0071e3 !important;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+      .form-check {
+        max-width: 130px;
+        margin: 0 auto;
+      }
+    }
+    .forgot {
+      p {
+        text-align: center;
+        a {
+          color: #06c;
+        }
+      }
+    }
+  }
+}
+
+.rs-chat {
+  border-top: 1px solid #d2d2d7;
+  .chat-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 22px;
+    p {
+      font-size: 17px;
+      line-height: 1.4;
+    }
+  }
+}
+
+.btn {
+  // cursor: pointer;
+  pointer-events: auto !important;
+  &:disabled {
+    background: #ddd;
+    color: #212529;
+    // cursor: not-allowed;
+    cursor: no-drop;
+  }
+
+  .loader-icon {
+    font-size: 16px;
+    color: #8f65ef;
+    top: 2px;
+    animation: spin 1s infinite linear;
+  }
+
+  @keyframes spin {
+    from {
+      transform: scale(1) rotate(0deg);
+    }
+
+    to {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+}
+
+.form-floating {
+  position: relative;
+
+  .icon-eye {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+// .password {
+//   height: 3.3em;
+//   min-height: 56px;
+//   height: 0;
+// }
+
+@media (max-width: 767.98px) {
+  h1 {
+    text-align: center;
+  }
+}

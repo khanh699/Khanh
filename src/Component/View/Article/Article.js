@@ -1,11 +1,11 @@
-import Banner from "./Banner";
-import Main from "./Main";
+import Low from "./Low";
+import { Outlet } from "react-router-dom";
 
 const Article = () => {
   return(
     <>
-      <Banner/>
-      <Main/>
+      <Outlet/>
+      <Low/>
     </>
   )
 }

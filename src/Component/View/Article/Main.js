@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import video from "../../../Assets/large.mp4"
 import Apple from '../../../Assets/apple-logo.png';
 import iPhone17PC from '../../../Assets/iphone-17-pro.jpg';
 import iPhoneAir from '../../../Assets/iphone-air.jpg';
@@ -12,6 +13,17 @@ import AppleTradeIn from '../../../Assets/iphone-trade-in.jpg';
 const Main = () => {
   return (
     <>
+      <div className="banner">
+        <div className="image-wrapper">
+          <video autoPlay="autoplay" muted loop="">
+            <source src={video} type="video/mp4" />
+          </video>
+        </div>
+        <div className="banner-headline">
+          <h1 className="section-headline">The Apple Store Shopping Event <small>Get an Apple Gift Card with an eligible purchase.<sup>1</sup> Starts 11.28.</small></h1>
+          <button type="button" className="btn btn-primary">Shop</button>
+        </div>
+      </div>
       <div className="main">
         <div className="iphone17">
           <div className="image-wrapper">

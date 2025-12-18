@@ -1,16 +1,16 @@
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import mac from "../../../Assets/store/mac.png";
-import iPhone from "../../../Assets/store/iphone.png";
-import iPad from "../../../Assets/store/ipad.png";
-import Watch from "../../../Assets/store/watch.png";
-import Vision from "../../../Assets/store/vision-pro.png";
-import Airpods from "../../../Assets/store/airpods.png";
-import Airtags from "../../../Assets/store/airtags.png";
-import Appletv from "../../../Assets/store/appletv.png";
-import Homepod from "../../../Assets/store/homepod.png";
-import Accessories from "../../../Assets/store/accessories.png";
-import HolidayGiftcards from "../../../Assets/store/holiday-giftcards.png";
+import mac from "../../../../Assets/store/mac.png";
+import iPhone from "../../../../Assets/store/iphone.png";
+import iPad from "../../../../Assets/store/ipad.png";
+import Watch from "../../../../Assets/store/watch.png";
+import Vision from "../../../../Assets/store/vision-pro.png";
+import Airpods from "../../../../Assets/store/airpods.png";
+import Airtags from "../../../../Assets/store/airtags.png";
+import Appletv from "../../../../Assets/store/appletv.png";
+import Homepod from "../../../../Assets/store/homepod.png";
+import Accessories from "../../../../Assets/store/accessories.png";
+import HolidayGiftcards from "../../../../Assets/store/holiday-giftcards.png";
 
 const Store = () => {
   return (

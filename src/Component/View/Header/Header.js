@@ -1,19 +1,26 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import { GrSearch } from "react-icons/gr";
 import { BsBag } from "react-icons/bs";
 import { FaGripLines } from "react-icons/fa6";
 import { IoLogoApple, IoMdClose, IoIosSearch, IoIosArrowRoundForward, IoIosBookmark, IoIosPlayCircle } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
-import { RiBox3Line } from "react-icons/ri";
-// import { NavLink, useNavigate } from "react-router-dom";
+import { RiBox3Line, RiProfileLine, RiLogoutBoxLine } from "react-icons/ri";
+import { logoutAction } from '../../../Redux/action/loginAction';
 
 const Header = (props) => {
+  const isAuthenticated = useSelector((state) => state.login.isAuthenticated);
+  const account = useSelector((state) => state.login.account);
+  // console.log("account:", account)
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [isShowNav, setIsShowNav] = useState(false);
   const [isSearch, setIsSearch] = useState(false);
   const [isBag, setIsBag] = useState(false);
-  // const navigate = useNavigate();
   
   const HandleNav = () => {
     setIsShowNav(!isShowNav);
@@ -32,6 +39,12 @@ const Header = (props) => {
 
   const Bag = () => {
     setIsBag(!isBag);
+  }
+
+  const handleLogOut = () => {
+    dispatch(logoutAction());
+    // setIsBag(!isBag);
+    navigate("/login");
   }
 
   return(
@@ -561,31 +574,50 @@ const Header = (props) => {
           <div className="secondary-item">
             <h2 className="secondary-title m-0">Quick Links</h2>
             <ul className="secondary-list">
-              <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/store"><span><IoIosArrowRoundForward /></span> Shop Gifts</a></li>
-              <li><a className="secondary-link" href="https://www.apple.com/retail/"><span><IoIosArrowRoundForward /></span> Find a Store</a></li>
-              <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/giftcards"><span><IoIosArrowRoundForward /></span> Apple Gift Card</a></li>
-              <li><a className="secondary-link" href="https://www.apple.com/apple-vision-pro/"><span><IoIosArrowRoundForward /></span> Apple Vision Pro</a></li>
-              <li><a className="secondary-link" href="https://www.apple.com/us/shop/goto/trade_in"><span><IoIosArrowRoundForward /></span> Apple Trade In</a></li>
+              <li><NavLink to="/" className="secondary-link" onClick={() => Search()}><span><IoIosArrowRoundForward /></span> Shop Gifts</NavLink></li>
+              <li><NavLink to="/" className="secondary-link" onClick={() => Search()}><span><IoIosArrowRoundForward /></span> Find a Store</NavLink></li>
+              <li><NavLink to="/" className="secondary-link" onClick={() => Search()}><span><IoIosArrowRoundForward /></span> Apple Gift Card</NavLink></li>
+              <li><NavLink to="/" className="secondary-link" onClick={() => Search()}><span><IoIosArrowRoundForward /></span> Apple Vision Pro</NavLink></li>
+              <li><NavLink to="/" className="secondary-link" onClick={() => Search()}><span><IoIosArrowRoundForward /></span> Apple Trade In</NavLink></li>
             </ul>
           </div>
         </div>
       </div>
       <div className="bag" style={isBag ? {transform : "translateY(0)"} : {transform : "translateY(calc(-100% - 40px))"}} onMouseLeave={() => setIsBag(false)}>
-        <div className="bagfield">
-          <div className="bag-title">
-            <p className="fs-4 m-0">Your Bag is empty</p>
-            <p className="fonts m-0"><a href="/"><ins>Sign in</ins></a> to see if you have any saved items</p>
-          </div>
-          <div className="secondary-item">
-            <h2 className="secondary-title m-0">My Profile</h2>
-            <ul className="secondary-list">
-              <li><a className="secondary-link" href="/"><span><RiBox3Line /></span> Orders</a></li>
-              <li><a className="secondary-link" href="/"><span><IoIosBookmark /></span> Your Saves</a></li>
-              <li><a className="secondary-link" href="/"><span><IoIosPlayCircle /></span> Account</a></li>
-              <li><a className="secondary-link" href="/"><span><FaUserCircle /></span> Sign in</a></li>
-            </ul>
-          </div>
-        </div>
+        {isAuthenticated === false ?
+          <>
+            <div className="bagfield">
+              <div className="bag-title">
+                <p className="fs-4 m-0">Your Bag is empty</p>
+                <p className="fonts m-0"><NavLink to="/login" onClick={() => Bag()}><ins>Sign in</ins></NavLink> to see if you have any saved items</p>
+              </div>
+              <div className="secondary-item">
+                <h2 className="secondary-title m-0">My Profile</h2>
+                <ul className="secondary-list">
+                  <li><NavLink to="/" className="secondary-link" onClick={() => Bag()}><span><RiBox3Line /></span> Orders</NavLink></li>
+                  <li><NavLink to="/" className="secondary-link" onClick={() => Bag()}><span><IoIosBookmark /></span> Your Saves</NavLink></li>
+                  <li><NavLink to="/" className="secondary-link" onClick={() => Bag()}><span><IoIosPlayCircle /></span> Account</NavLink></li>
+                  <li><NavLink to="/login" className="secondary-link" onClick={() => Bag()}><span><FaUserCircle /></span> Sign in</NavLink></li>
+                </ul>
+              </div>
+            </div>
+          </> 
+          : 
+          <>
+            <div className="bagfield end">
+              <div className="bag-title">
+                <figure><img src={account.image} alt={account.username} /></figure>
+              </div>
+              <div className="secondary-item">
+                <h2 className="secondary-title m-0">My Profile</h2>
+                <ul className="secondary-list">
+                  <li><NavLink to="/" className="secondary-link" onClick={() => Bag()}><span><RiProfileLine /></span> Profile</NavLink></li>
+                  <li><NavLink className="secondary-link" onClick={() => handleLogOut()}><span><RiLogoutBoxLine /></span> Log Out</NavLink></li>
+                </ul>
+              </div>
+            </div>
+          </>
+        }
       </div>
     </>
   )
